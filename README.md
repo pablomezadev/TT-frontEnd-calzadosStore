@@ -24,4 +24,3 @@
    git clone https://github.com/pablomezadev/TT-frontEnd.git
 
 2. Abrir el archivo index.html en cualquier navegador.
-
