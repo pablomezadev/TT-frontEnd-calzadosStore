@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calzadoStore</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="acercaDe.html">Acerca de</a></li>
+                <li><a href="preguntas.html">Preguntas frecuentes</a></li>
+                <li><a href="formulario.html">Formulario</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="https://formspree.io/f/myzyjvve" method="post">
+            <fieldset>
+                <legend><b>Datos personales</b></legend>
+                <label for="nombre">Nombre [*]</label>
+                <input type="text" id="" size="10" maxlength="15" required>
+                <label for="Apellido">Apellido [*]</label>
+                <input type="text" id="" size="10" maxlength="15" required><br><br> 
+                <label for="dni">D.N.I [*]</label>
+                <input type="number" id="" size="10" maxlength="15" required>
+                <label for="tram_tram">N° Trámite [*]</label>
+                <input type="password" id="" size="10" maxlength="15" required>
+                <label for="fec_nac">Fecha nacimiento [*]</label>
+                <input type="date" name="fec_nac"" required><br><br>
+                <label for="fec_nac">Categorias</label>
+                <select name="categorias" id="">
+                    <option value="niño">Niño</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                    <option value="otro" disabled >Otro</option>
+                </select><br>
+                <label for="correo">E-mail [*]</label>
+                <input type="email" name="correo" size="10" maxlength="15" required>
+                <label for="adjunto">Documento</label>
+                <input type="file" name="adjunto" id="" size="10" maxlength="15">
+            </fieldset>
+            <br><br>
+            <label for="comentarios"><b>Envienos su consulta</b></label><br>
+            <textarea name="comentarios" cols="50" rows="4" placeholder="Escriba aquí su consulta (max 1200 caracteres)">Escriba aquí su consulta</textarea> <br>
+            <label for="horario">Seleccione un horario de contacto</label>
+            <select name="horario" id="" required>
+                <option value="" disabled selected>Seleccione un horario [*]</option>
+                <option value="1">08hs a 12hs</option>
+                <option value="2">12hs a 14hs</option>
+                <option value="3">14hs a 18hs</option>
+                <option value="4">18hs a 22hs</option>
+            </select>
+            <br><br>
+            <label for="perfil" required>Perfil cliente</label>
+            <input type="checkbox" name="perfil" id="" >mayorista</input>
+            <input type="checkbox" name="perfil" id="" >minorista</input>
+            <input type="checkbox" name="perfil" id="" >consumidor final</input>
+            <br><br>
+            <label for="zona">Zona de residencia</label>
+            <input type="radio" name="zona" id="">CABA</input>
+            <input type="radio" name="zona" id="">AMBA</input>
+            <input type="radio" name="zona" id="">Otra</input>
+            <br><br>
+            <input type="checkbox" name="terminos" id="" required> <!-- Siempre debe ir-->
+            ACEPTO TERMINOS Y CONDICIONES <br><br>
+            <input type="submit" value="Enviar Datos">
+            <input type="reset" value="Borrar">
+        </form>
+    </main>
+</body>
+</html>
