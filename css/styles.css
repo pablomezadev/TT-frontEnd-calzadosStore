@@ -2,9 +2,26 @@
     margin:0px;
     padding:50;
 }
-/* Medidas: 
-rem o em : 
- */
+/* Medidas absolutas y relativas: 
+absolutas y relativas:
+absolutas: 
+px, 
+cm,mm 
+pt -> 0.35, 
+in -> 2.54, 
+pc -> 4.23
+relativas: 
+em: 16px (equivale al tamaño de una letra) = 1em,
+body -> 16px (1em) -> escala : 1.0
+hijo -> 1.3 em = 20.8 px
+nieto -> 1.3(hijo) =27.4px
+
+rem (root em): 
+define la escalabilidad.
+:root{
+    font-siza: 20px // escala 1.0
+}
+*/
 body{
     background-color: rgb(255, 255, 255);
     /* background-color: rgb(42, 42, 169);  */
