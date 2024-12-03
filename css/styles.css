@@ -1,8 +1,16 @@
+/*Root
+define el valor de la escala, 
+si no definimos un root por defecto hoy en dia vale 16 px*/
+:root{ 
+    font-size: 20x; /* escala 1.0*/
+}
+
 *{
     margin:0px;
-    padding:50;
+    padding:0px;
 }
-/* Medidas absolutas y relativas: 
+/* UNIDADES DE MEDIDA
+Medidas absolutas y relativas: 
 absolutas y relativas:
 absolutas: 
 px, 
@@ -23,20 +31,34 @@ define la escalabilidad.
 }
 */
 body{
-    background-color: rgb(255, 255, 255);
-    /* background-color: rgb(42, 42, 169);  */
+    /* background-color: rgb(255, 255, 255); */
+    background-image: url("../img/fondo-shoes.webp") ;
+    font-family: "Sofia Sans", sans-serif, Arial;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
 }
-h1{
+
+.sofia-sans-uniquifier{
+    font-family: "Sofia Sans", sans-serif, Arial;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    }
+
+h1,h3{
     color: rgb(255, 255, 255);
     background-color:#000000;
     font-size: 25px;
     font-family: 'Frankling Gothic Medium', 'Arial Narrow', Arial, serif;
 }
 
-/*Regla general: usaremos CLASS para estilos repetidos y ID para estilos unicos*/
-p{
-    color: rgb(56, 56, 56);
+#video {
+    /* padding: 0.5em; */
+    text-align: center;
+    /* background-color: #f1f1f1; */
 }
+/*Regla general: usaremos CLASS para estilos repetidos y ID para estilos unicos*/
 
 #introduccion {
     color: rgb(6, 4, 149);
@@ -50,9 +72,67 @@ p{
 }
 
 header{
-    background-color:#229acd;
+    background-color:#348848;
 }
 
 nav{
-    background-color: greenyellow;
+    background-color: #229acd;
+}
+
+/* ESPECIFICIDAD INICIO:
+Definiciones
+Odenados de mayor a menor relevancia
+1 - !important           -> cualquier selector  -> peso = 1
+2 - inline               -> (style dentro html) -> peso = 0,1,0,0,0
+3 - ID                   -> cualquier tag       -> peso = 0,0,1,0,0
+4 - Clases, atributos y pseudoclases ->         -> peso = 0,0,0,1,0
+5 - Etiquetas y pseudoelementos ->              -> peso = 0,0,0,0,1
+
+*/
+
+/*si el puntaje empata el navegador decide quien "gana" */
+
+p{
+    color: rgb(255, 255, 255)!important; /* 1ro */ 
+    /* font-family: "Sofia Sans", sans-serif; */
+}
+
+/* en html 2doo */ 
+
+ #id-parrafo{
+    color: rgb(119, 167, 23); /* 3ro */ 
+} 
+
+.class-parrado{
+    color: rgb(6, 6, 252); /* 4to */ 
+}
+
+p{
+    color: orange; /* 5to */ 
+}
+
+
+/* ESPECIFICIDAD FIN:
+Definiciones
+Odenados de mayor a menor relevancia
+1 - !important           -> cualquier selector  -> peso = 1
+2 - inline               -> (style dentro html) -> peso = 0,1,0,0,0
+3 - ID                   -> cualquier tag       -> peso = 0,0,1,0,0
+4 - Clases, atributos y pseudoclases ->         -> peso = 0,0,0,1,0
+5 - Etiquetas y pseudoelementos ->              -> peso = 0,0,0,0,1
+*/
+
+/* FOOTER*/
+div{
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+.class-form{
+    font-family: "Sofia Sans", sans-serif, Arial;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    color: aliceblue;
 }
