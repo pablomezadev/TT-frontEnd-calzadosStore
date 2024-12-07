@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calzadoStore</title>
+    <link rel="stylesheet" href="../../css/herenciaEnCss/styles-herencia.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../contacto.html">Contacto</a></li>
+                    <li><a href="../acercaDe.html">Acerca de</a></li>
+                    <li><a href="../preguntas.html">Preguntas frecuentes</a></li>
+                    <li><a href="../formulario.html">Formulario</a></li>
+                    <li><a href="#">HerenciaEnCss</a></li>
+                    <li><a href="../pesudoElementos/pseudoElem.html">Pseudo-Elementos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Herencia en css</h1>
+            <section class="parrafo">
+                <b>class="parrafo"</b>
+                <h1>main - section 1 (class=parrafo) - h1 </h1>
+                <p>main - section 1 (class=parrafo)- p</p>
+                <div id="contenedor-lista">
+                    <b>div id="contenedor-lista"</b>
+                    <ul>
+                        <li><a href="#">main - section 1- div 1 (class=contenedor lista)- ul - li 1</a></li>
+                        <li><a href="#">main - section 1- div 1 (class=contenedor lista)- ul - li 2</a></li>
+                        <li><a href="#">main - section 1- div 1 (class=contenedor lista)- ul - li 3</a></li>
+                        <li><a href="#">main - section 1- div 1 (class=contenedor lista)- ul - li 4</a></li>
+                    </ul>
+                    <h3>este es un h3 hijo de contenedor-lista</h3>
+                    <div>
+                        <h4>este es un nieto de item-lista</h4>
+                        <div>
+                            <h4>este es un tatara nieto de item-lista</h4>    
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="contenedor"> <!-- Hermano general de div con class="contenedor" -->
+                <b>class = contenedor</b>
+                <h1>.contenedor - div 1 - h1 - Selectores hijos</h1>
+                <div>
+                    <h2>.contenedor - div 1 - div 1 - h2 - Selector hijo </h2>
+                    <p>.contenedor - div 1 - div 1 - p -selector hijo</p>
+                    <span>span nro 1</span>
+                </div>
+                <div>
+                    <h2>.contenedor - div 2 - h2</h2> <!-- hermanos adyacendes (estan pegados) -->
+                    <p>.contenedor - div 2 - p </p> <!-- hermanos adyacendes (estan pegados) -->
+                </div>
+            </div>
+
+            <div class="contenedor"> <!-- Hermano general de div con class="contenedor" -->
+                <b>class = contenedor</b>
+                <h1>.contenedor - div 1 - h1 - Selectores hijos</h1>
+                <div>
+                    <span>primer span dentro de div ajenado</span>
+                    <h2>.contenedor - div 1 - div 1 - h2 - Selector hijo </h2>
+                    <p>.contenedor - div 1 - div 1 - p -selector hijo</p>
+                    <span>span nro 1</span>
+                </div>
+                <h5> H5 - Hermano adyacente 1</h5>
+                <div>
+                    <h2>.contenedor - div 2 - h2</h2>
+                    <p>.contenedor - div 2 - p </p>
+                </div>
+                <span> | span - hermano adyacente 1 | </span> <br>
+                <h5> H5 - Hermano adyacente 2</h5>
+                <label for="">campo para diferenciar hermanos adyacentes y generales</label>
+                <br>
+                <input type="text"> <br>
+                <span> | span - hermano adyacente 2 (no deberia pintarse) | </span>
+            </div>
+
+        </main>
+        <footer>
+            <nav>
+                <i class="fa-brands fa-whatsapp" style="color: greenyellow;"></i>
+                <i class="fa-brands fa-instagram" style="color: rgb(196, 6, 196);"></i>
+                <i class="fa-brands fa-facebook" style="color: rgb(0, 0, 252);"></i>
+            </nav>
+        </footer>
+    </div>
+    <script src="https://kit.fontawesome.com/bd76a1978b.js" crossorigin="anonymous"></script>
+</body>
+</html>

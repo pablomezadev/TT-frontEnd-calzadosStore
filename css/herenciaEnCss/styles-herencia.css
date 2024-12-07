@@ -1,0 +1,96 @@
+/*Root
+define el valor de la escala, 
+si no definimos un root por defecto hoy en dia vale 16 px*/
+:root{ 
+    font-size: 1rem; /* escala 1.0*/
+}
+
+/* *{
+    margin:0px;
+    padding:0px;
+} */
+
+/* UNIDADES DE MEDIDA
+Medidas absolutas y relativas: 
+absolutas y relativas:
+absolutas: 
+px, 
+cm,mm 
+pt -> 0.35, 
+in -> 2.54, 
+pc -> 4.23
+relativas: 
+em: 16px (equivale al tamaño de una letra) = 1em,
+body -> 16px (1em) -> escala : 1.0
+hijo -> 1.3 em = 20.8 px
+nieto -> 1.3(hijo) =27.4px
+
+rem (root em): 
+define la escalabilidad.
+:root{
+    font-siza: 20px // escala 1.0
+}
+*/
+body{
+    background-color: rgb(252, 255, 239);
+    /* background-image: url("../../img/fondo-shoes.webp") ; */
+    font-family: "Sofia Sans", sans-serif, Arial;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* INICIO Ejemplo para usar font sofia sans */
+.sofia-sans-uniquifier{
+    font-family: "Sofia Sans", sans-serif, Arial;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    }
+/* FIN Ejemplo para usar font sofia sans */
+
+/*Regla general: usaremos CLASS para estilos repetidos y ID para estilos unicos*/
+
+nav{
+    background-color: #229acd;    
+}
+
+/** HERENCIAS CSS INICIO **/
+
+.parrafo p { /* Especifico al p dentro de la class parrafo*/
+    color: rgb(109, 195, 69);
+    background-color:#143160;
+    font-size: 25px;
+    font-family: 'Frankling Gothic Medium', 'Arial Narrow', Arial, serif;
+}
+
+/** #contenedor-lista { si no especifico solo pinta las viñetas **/ 
+#contenedor-lista { /*si no especifico solo pinta las viñetas y lo que esté dentro del contenedor-lista */
+    color: #23a51a;
+    margin: 5px;
+    font-size: 16px;
+    background-color: rgb(189, 223, 252);
+}
+
+/* .contenedor > div > p{ pinta solo un p hijo de un div hijo de un class="contenedor" */
+    /* color: #fbfdff;
+    background-color: rgb(93, 156, 63);
+} */
+
+.contenedor div+span{ /* hermano adyacente "+": para seleccionar el primer hermano adyacente a mismo nivel */
+    color: #fbfdff;
+    background-color: rgb(93, 156, 63);
+}
+
+.contenedor div~h5{ /** "~" : para hermanos generales, a mismo nivel esten pegados o no **/
+    color: #90eb41;
+    background-color: #143160;
+}
+
+/** HERENCIAS CSS FIN **/
+
+footer{
+    display: grid;
+    max-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+} 
