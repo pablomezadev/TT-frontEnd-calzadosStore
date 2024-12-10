@@ -1,0 +1,95 @@
+/*Root
+define el valor de la escala, 
+si no definimos un root por defecto hoy en dia vale 16 px*/
+:root{ 
+    font-size: 1rem; /* escala 1.0*/
+}
+
+/* *{
+    margin:0px;
+    padding:0px;
+} */
+
+/* UNIDADES DE MEDIDA
+Medidas absolutas y relativas: 
+absolutas y relativas:
+absolutas: 
+px, 
+cm,mm 
+pt -> 0.35, 
+in -> 2.54, 
+pc -> 4.23
+relativas: 
+em: 16px (equivale al tamaño de una letra) = 1em,
+body -> 16px (1em) -> escala : 1.0
+hijo -> 1.3 em = 20.8 px
+nieto -> 1.3(hijo) =27.4px
+
+rem (root em): 
+define la escalabilidad.
+:root{
+    font-siza: 20px // escala 1.0
+}
+*/
+body{
+    background-color: rgb(252, 255, 239);
+    /* background-image: url("../../img/fondo-shoes.webp") ; */
+    font-family: "Sofia Sans", sans-serif, Arial;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* INICIO Ejemplo para usar font sofia sans */
+.sofia-sans-uniquifier{
+    font-family: "Sofia Sans", sans-serif, Arial;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    }
+/* FIN Ejemplo para usar font sofia sans */
+
+/*Regla general: usaremos CLASS para estilos repetidos y ID para estilos unicos*/
+
+nav{
+    background-color: #229acd;    
+}
+
+footer{
+    display: grid;
+    max-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+} 
+
+/*INICIO pseudo-elementos
+Algo que no es un elemento pero se hace pasar como tal
+Los pseudo-elementos se consideran hijos del elemento principal
+*/
+
+span{
+    font-size: 40px;
+    color: darkgray;
+    background-color: black;
+}
+span::before{
+    content: "$";
+    color: yellow;
+    background-color: #229acd;
+}
+
+span::after{
+    content: ".00";
+    color: green;
+    background-color: chartreuse;
+}
+
+p::first-letter{
+    color: blue;
+    font-size: 30px;
+}
+
+p::selection{
+    background-color: yellowgreen;
+}
+
+/*FIN pseudo-elementos*/

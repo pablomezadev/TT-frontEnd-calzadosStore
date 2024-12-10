@@ -1,0 +1,73 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* border: 10px solid yellow; */
+}
+
+body{
+    padding: 40px;  
+}
+/* BOX-SIZING: broder-box y content-box:
+1. border-box: El tamaño total de un elemento 
+incluye su contenido, el relleno (padding) y el borde (border). 
+Esto significa que cualquier espacio adicional por el borde o 
+el relleno no aumentará el tamaño total del elemento.
+
+2. content-box: El tamaño total de un elemento solo se refiere
+a su contenido. El relleno (padding) y el borde (border) se 
+añaden al tamaño, lo que hace que el elemento sea más grande 
+de lo que aparece en las dimensiones establecidas.
+content-box, PRINCIPALMENTE SE UTILIZA PARA QUE LO ESPECIFICADO VALGA ESO, EN SU TOTALIDAD.
+https://www.youtube.com/watch?v=Vx854s9YE78
+*/
+
+#caja1, #caja2{
+    width: 250px;
+    height: 250px;
+    background-color: rgb(255, 179, 179);
+    border: 10px solid red; 
+    margin: 15px; /* espacio desde el borde al siguiente elemento, puedo especificar cada parametro con sentido al reloj top, right, bottom, left*/
+    padding: 10px;
+    /* box-sizing: content-box; /* asigna el tamaño asignado por defecto, with y height lo incluyen el border, margin ni padding, si queiro agregar cosas hay que tener en cuenta lo que calcula el navegador */
+    box-sizing: border-box; /* el with y el height incluyen el contenido y el padding pero no el margin. se restan  */
+}
+
+p{
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* line-height: 220px; */
+    padding: 20px;
+}
+
+.caja3, .caja4{
+    width: 250px;
+    height: 250px;
+    margin: 15px;
+    padding: 10px;
+    border: 5px solid green;
+    box-sizing: border-box;
+}
+
+.clearfix{ /* resetea, limpia el flotado de lo anterior*/
+    float: none;
+    clear: both;    
+    
+}
+
+/* POSICIONAMIENTO: */
+#contenedor{
+    width: 62%;
+    float:left
+}
+
+aside{
+    float: right;
+    width: 15%;
+    border: 2px solid black;
+    min-height: 500px;
+    max-height: 600px;
+    text-align: center;
+    overflow: scroll; /* solucion a textos muy largos en un aside (crea scroll)*/
+}
