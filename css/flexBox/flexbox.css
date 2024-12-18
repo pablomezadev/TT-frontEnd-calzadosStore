@@ -1,0 +1,113 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: hsl(0, 0%, 90%);
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.cabecera{
+    background-color: rgb(129, 217, 220);
+}
+
+
+.centrado{
+    margin: 0 auto;
+    padding: 0 .8em;
+}
+
+
+.titulo1{   /*Que sería el H1*/
+    margin: 0 0 1em;
+    padding: 1em 0;
+    font-weight: 300;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+}
+
+.tarjeta a {
+    color: rgb(36, 5, 5);
+    text-decoration: none;
+}
+
+.tarjeta a:hover{
+    box-shadow: 3px 3px 8px #817272;
+}
+
+.tarjeta-content{
+    padding: 1.4em;
+}
+
+.tarjeta-content h2{
+    margin-top: 0;
+    margin-bottom: .5em;
+    font-weight: normal;
+}
+
+.tarjeta-content p{
+    font-size: 95%;  /*.95em*/
+}
+
+figure {
+    margin: 0;
+}
+
+img{
+    display: block;
+    border: 0;
+    width: 100%;
+    height: auto;
+}
+
+/*Empezamos a darle flex*/
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tarjeta {
+    background: hsl(0, 0%, 100%);
+    margin-bottom: 2em;
+    width: 33%;
+}
+
+/* MENU */
+.menu-section{
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid hsl(0, 0%);
+ }
+
+ .menu-simple-menu ul { 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: hsl(0, 0%, 16%);
+ }
+
+ .menu-simple-menu li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: .6em 1em;
+ }
+
+ .menu-simple-menu li a:hover{
+     background: hsl(0, 0%, 25%);
+ }
+
+ /*flex-box*/
+ .menu-simple-menu ul{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+ }
+ 
+ .menu-simple-menu li{
+     flex: 1 0 auto;
+     text-align: center;
+ }
