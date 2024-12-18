@@ -39,6 +39,7 @@ define la escalabilidad.
     font-weight: 100;
     font-style: normal;
     line-height: 1.6;
+     overflow-x: hidden;
 } 
 
 .sofia-sans-uniquifier{
@@ -133,7 +134,7 @@ define la escalabilidad.
 .dropdown-content li a:hover {
     background-color: #555;
     /* width: 100%; */
-} */
+} 
 
 h1,h3{
     color: rgb(255, 255, 255);
@@ -142,10 +143,24 @@ h1,h3{
     font-family: 'Frankling Gothic Medium', 'Arial Narrow', Arial, serif;
 }
 
+#prductos{
+    background-color: #fff;
+}
+
+#categorias{
+    display: flex ;
+    background-color: #555;
+}
+
 #video {
-    /* padding: 0.5em; */
+    padding: 0.5em;
     text-align: center;
+    /* height: 600px; */
     /* background-color: #f1f1f1; */
+}
+
+iframe{
+    height: 400px;
 }
 /*Regla general: usaremos CLASS para estilos repetidos y ID para estilos unicos*/
 
@@ -156,7 +171,7 @@ h1,h3{
 }
 
 .parrafos{
-    color: black;
+    color: black; 
     font-size: 15px;
 }
 
@@ -211,12 +226,46 @@ Odenados de mayor a menor relevancia
 5 - Etiquetas y pseudoelementos ->              -> peso = 0,0,0,0,1
 */
 
-/* FOOTER*/
-.contenedor {
+/***** inicio FOOTER ******/
+/* .contenedor {
     display: grid;
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
+} */
+
+#datos p {
+    font-size: 14px;
 }
+
+#datos {
+    width:300px;
+    height: 180px;
+    float:left;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;  /* Espacio entre logo y menú */
+    align-items: center;             /* Alineación vertical centrada */
+    padding: 1rem 2rem;              /* Espaciado interno */
+    background-color: #229acd;          /* Fondo oscuro */
+    color: #fff;                     /* Texto blanco */
+    flex-wrap: wrap;                  /* Permite que los elementos se ajusten a nuevas líneas si es necesario */
+}
+
+/* footer {
+    width: 960px;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #000;
+    color: #fff;
+    margin-top: 10px;
+} */
+
+/***** fin FOOTER******/
 
 .class-form{
     font-family: "Sofia Sans", sans-serif, Arial;

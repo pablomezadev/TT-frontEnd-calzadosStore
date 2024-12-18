@@ -20,7 +20,7 @@
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="pages/contacto.html">Contacto</a></li>
-                    <li><a href="pages/acercaDe.html">Acerca de</a></li>
+                    <li><a href="pages/acercaDe.html">Acerca de Nosotros</a></li>
                     <li><a href="pages/preguntas.html">Preguntas frecuentes</a></li>
                     <!-- <li><a href="pages/formulario.html">Formulario</a></li>
                     <li><a href="pages/herenciaEnCss/herenciasCss.html">herencias en css</a></li>
@@ -35,6 +35,7 @@
                             <li><a href="pages/pesudoElementos/pseudoElem.html">Pseudo-Elementos</a></li>
                             <li><a href="pages/modelo-caja/modelo-caja.html">Box-Model</a></li>
                             <li><a href="pages/flexBox/flexBox.html">FlexBox</a></li>
+                            <li><a href="pages/grid/grid.html">Grid</a></li>
                         </ul>
                       </li>
                 </ul>
@@ -44,35 +45,44 @@
         <main>
             <section id="video">
                 <h1>CalzadoStore</h1>
-                <!-- <iframe width="100%" height="auto" src="https://www.youtube.com/embed/aVs2Y_mNMTc?autoplay=1&mute=1" 
-                    title="YouTube video player" frameborder="0" 
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/aVs2Y_mNMTc?autoplay=1&mute=1&loop=1&playlist=aVs2Y_mNMTc" 
+                    title="YouTube video player" 
+                    frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen onerror="this.onerror=null;this.src='img/iconos/icono-no-icono-no-conection.svg'">
-                </iframe> -->
-
-                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/DOtoIBrBAYE" 
-                title="The Matrix  Soundtrack- Juno Reactor Vs Don Davis - Navras" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen >
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen onerror="this.onerror=null;
+                    this.src='img/iconos/icono-no-icono-no-conection.svg'">
                 </iframe>
-
-                <!-- <iframe width="100%" height="auto" src="https://www.youtube.com/embed/DOtoIBrBAYE" title="The Matrix  Soundtrack- Juno Reactor Vs Don Davis - Navras" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
-                </iframe> -->
-                <h3>nuestros productos</h3>
             </section>
-            <section>
-                <h1>section 1 - Especificidad</h1>
-                <p id="id-parrafo" class="class-parrafo" >Este es un parrafo para practicar la especificidad</p>
+            <section id="categorias">
+                <h3>categorias </h3>
             </section>
-            <section>
-                <h1>section 2</h1>
-                <p id="id-parrafo" class="class-parrafo" >Este es un parrafo para practicar la especificidad</p>
-            </section>
+            <div id="prductos">
+                <section id="cards">
+                    <h1>section 1 - Especificidad</h1>
+                    <p id="id-parrafo" class="class-parrafo" >Este es un parrafo para practicar la especificidad</p>
+                </section>
+                <section id="cards">
+                    <h1>section 2</h1>
+                    <p id="id-parrafo" class="class-parrafo" >Este es un parrafo para practicar la especificidad</p>
+                </section>
+            </div>
         </main>
+
         <footer>
-            <nav>
-                <i class="fa-brands fa-whatsapp" style="color: greenyellow;"></i>
-                <i class="fa-brands fa-instagram" style="color: rgb(196, 6, 196);"></i>
-                <i class="fa-brands fa-facebook" style="color: rgb(0, 0, 252);"></i>
+            <div id="datos">
+                <p>Av Siempre Viva 666</p>
+                <p>Telef: 1155668877</p>
+                <p>info@codoacodo.edu.ar</p>
+            </div>
+
+            <!-- <nav id="botonera_footer" class="menu-nav"> -->
+            <nav id="botonera_footer" >
+                <ul>
+                    <i class="fa-brands fa-whatsapp" style="color: greenyellow;"></i>
+                    <i class="fa-brands fa-instagram" style="color: rgb(196, 6, 196);"></i>
+                    <i class="fa-brands fa-facebook" style="color: rgb(0, 0, 252);"></i>
+                </ul>
             </nav>
         </footer>
         <script src="https://kit.fontawesome.com/bd76a1978b.js" crossorigin="anonymous"></script>
