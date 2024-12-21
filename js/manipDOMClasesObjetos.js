@@ -8,9 +8,9 @@ function cambiarTexto(){  //
 }
 
 // iyeccion html
-let newDiv = document.createElement('div')
-newDiv.textContent= 'este es un nuevo div desde js'
-document.body.appendChild(newDiv)   // agrega un elemento al final del body del documento DOM
+// let newDiv = document.createElement('div')
+// newDiv.textContent= 'este es un nuevo div desde js'
+// document.body.appendChild(newDiv)   // agrega un elemento al final del body del documento DOM
 
 //manipulando image
 // let image = document.getElementById('myImage')
@@ -39,8 +39,8 @@ function cambiarImagen(){
 // por ej : document.querySelector('body').innerHTML = '<h2>Hola soy codigo invuido desde la consola</h2>' 
 
 // accedemos a un class de 2 formas diferentes: 
-document.querySelectorAll('.caja') // deveulve un NodeList, es estatico , no actualiza sus valores automaticamente al manipular el dom
-document.getElementsByClassName('caja') // deveulve un HTMLCollection, es dinamico, es similar a un array, es accesibel, actualiza sus valores automaticamente al manipular el dom
+// document.querySelectorAll('.caja') // deveulve un NodeList, es estatico , no actualiza sus valores automaticamente al manipular el dom
+// document.getElementsByClassName('caja') // deveulve un HTMLCollection, es dinamico, es similar a un array, es accesibel, actualiza sus valores automaticamente al manipular el dom
 
 //En consola almacenamos en variables elementos del dom, los manipulamos, insertamos botones y vimos como agregarle atributos
 
@@ -95,3 +95,4 @@ const objFunc = {
 console.log(`usando funcion mediante objeto json: ${objFunc.sum(5,5)}`)
 
 /**** fin FUNCIONES ANONOIMAS ****/ 
+
