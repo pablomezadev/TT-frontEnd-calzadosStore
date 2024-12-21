@@ -93,4 +93,58 @@ const filtroM10 = numeros.filter((number)=> number>10 )
 
 console.log(`filtro numeros mayores a 10 en array:[${filtroM10}]`)
 
+/** funciones - Recursivas - No recursivas o iterativas - ámbito de una variable**/
+
+// recursividad con factorial
+// const factorial = function(n){
+//     if(n==0 | n==1){ // caso base
+//         return 1 
+//     }else{
+//         return factorial(n-1)*n //calculo recursivo
+//     }
+// }
+// console.log(factorial(6))
+
+// NO recursiva con fibonacci
+// function fibonacci(n){
+//     if(n<=0){
+//         return 0    // n=0
+//     }else if(n==1){
+//         return 1    // caso n= 1
+//     }
+//     let a = 1
+//     let b = 2
+//     let fibo = 0
+//     for (let i = 2; i <= n; i++) {
+//         fibo = a+b  // 2+1 =3 | 
+//         a=b         // 
+//         b=fibo
+//     }
+//     return fibo
+// }
+// console.log(fibonacci(8))
+
+
+// fibonacci con recursividad
+// function fibonacci(n){
+//     if(n<=0){
+//         return 0    // n=0
+//     }else if(n==1){
+//         return 1    // caso n= 1
+//     }
+//     return fibonacci(n-1) + fibonacci(n-2)
+// }
+// console.log(fibonacci(8))
+
 /** fin FUNCIONES**/
+
+// Alcance de las variables, super global 
+let nombre = "Juan" // variable global , puedo acceder desde cualquier lugar
+
+function saludo(){
+    console.log(`Hola ${nombre}`)
+}
+saludo()
+
+// variable de funcion / ambito local 
+
