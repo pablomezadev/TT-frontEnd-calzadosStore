@@ -1,0 +1,366 @@
+/*Root
+define el valor de la escala, 
+si no definimos un root por defecto hoy en dia vale 16 px*/
+:root{ 
+    font-size: 20px; /* escala 1.0*/
+    --color-principal: #229acd;
+}
+
+*{
+    margin:0px;
+    padding:0px;
+}
+
+/* UNIDADES DE MEDIDA
+Medidas absolutas y relativas: 
+absolutas y relativas:
+absolutas: 
+px, 
+cm,mm 
+pt -> 0.35, 
+in -> 2.54, 
+pc -> 4.23
+relativas: 
+em: 16px (equivale al tamaño de una letra) = 1em,
+body -> 16px (1em) -> escala : 1.0
+hijo -> 1.3 em = 20.8 px
+nieto -> 1.3(hijo) =27.4px
+
+rem (root em): 
+define la escalabilidad.
+:root{
+    font-siza: 20px // escala 1.0
+}
+*/
+ body{
+    background-color: rgb(255, 255, 255); 
+    /* background-image: url("../img/fondo-shoes.webp") ; */
+    background-image: url("../img/fondo-shoes.webp") ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    line-height: 1.6;
+    overflow-x: hidden;
+} 
+
+.sofia-sans-uniquifier{
+    font-family: "Sofia Sans", sans-serif, Arial;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    }
+
+.contenedor{
+    /* display: block; */
+    opacity: 0.95;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;  /* Espacio entre elementos */
+    align-items: center;             /* Alineación vertical centrada */
+    padding: 0.1rem;              /* Espaciado interno */
+    background-color: #229acd;          /* Fondo oscuro */
+    color: #fff;                     /* Texto blanco */
+    flex-wrap: wrap;                  /* Permite que los elementos se ajusten a nuevas líneas si es necesario */
+}
+
+  /* Estilo del logo */
+    .logo{
+        padding: 20px;
+        position: relative;
+        /* margin-top: 8px; */
+        /* max-width: 10%; */
+        visibility: visible;
+        /**display: flex;**/ /* Para asegurar que sea un contenedor flexible */
+        justify-content: center; /* Centra el contenido dentro del logo */
+        align-items: center; /* Asegura que se alinee verticalmente */
+        background-color: #229acd;
+    }
+
+ a img {
+    max-width: 100%;   /* Asegura que el enlace ocupe todo el espacio disponible */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 0px;
+    margin: 15px;
+    width: 100px;  /* Tamaño del logo */
+    height: auto;  /* Mantén la proporción del logo */
+  } 
+
+/** bootstrap NAV BAR**/
+.navbar {
+    /* background-color: #229acd; */
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .navbar a{
+    display: block;
+    text-decoration: none;
+    color: aliceblue;
+  }
+  
+.navbar li a{
+    display: block;
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*** inicio Carrito ***/
+
+
+/*** USO ESTE ***/
+#cart-icon {
+    /* position: fixed; */
+    top: 50px;
+    /* align-items: center ; */
+    position: absolute;
+    display: flex;
+    background-color: var(--color-principal);
+    padding: 10px;
+    right: 50px;  /* Esto lo coloca a 20px del margen derecho */
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* z-index: 900; */
+    max-height: 100%;
+    max-width: 100%;
+    overflow-y: auto;
+}
+
+
+#cart-count {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    background-color: green;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    width: 15px;
+    height: 15px;
+    border-radius: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    }
+    
+    #cart-count.hidden {
+        display: none;
+    }
+    
+    #cart-count.updated {
+    transform: scale(1.2);
+    }
+
+/*** fin Carrito***/
+
+
+
+
+h1,h3{
+    color: rgb(255, 255, 255);
+    background-color:#000000;
+    font-size: 25px;
+    font-family: 'Frankling Gothic Medium', 'Arial Narrow', Arial, serif;
+}
+
+#prductos{
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+#categorias{
+    display: flex ;
+    background-color: #555;
+}
+
+iframe{
+    height: 400px;
+}
+/*Regla general: usaremos CLASS para estilos repetidos y ID para estilos unicos*/
+
+#introduccion {
+    color: rgb(6, 4, 149);
+    font-style: italic;
+    font-weight: bold;
+}
+
+.parrafos{
+    color: black; 
+    font-size: 15px;
+}
+
+/* header{
+    background-color:#348848;
+} */
+
+nav{
+    background-color: #229acd;
+}
+
+/* ESPECIFICIDAD INICIO:
+Definiciones
+Odenados de mayor a menor relevancia
+1 - !important           -> cualquier selector  -> peso = 1
+2 - inline               -> (style dentro html) -> peso = 0,1,0,0,0
+3 - ID                   -> cualquier tag       -> peso = 0,0,1,0,0
+4 - Clases, atributos y pseudoclases ->         -> peso = 0,0,0,1,0
+5 - Etiquetas y pseudoelementos ->              -> peso = 0,0,0,0,1
+
+*/
+
+/*si el puntaje empata el navegador decide quien "gana" */
+
+p{
+    color: rgb(255, 255, 255)!important; /* 1ro */ 
+    /* font-family: "Sofia Sans", sans-serif; */
+}
+
+
+/* ESPECIFICIDAD FIN:
+Definiciones
+Odenados de mayor a menor relevancia
+1 - !important           -> cualquier selector  -> peso = 1
+2 - inline               -> (style dentro html) -> peso = 0,1,0,0,0
+3 - ID                   -> cualquier tag       -> peso = 0,0,1,0,0
+4 - Clases, atributos y pseudoclases ->         -> peso = 0,0,0,1,0
+5 - Etiquetas y pseudoelementos ->              -> peso = 0,0,0,0,1
+*/
+
+.class-form{
+    font-family: "Sofia Sans", sans-serif, Arial;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    color: aliceblue;
+}
+
+/*** inicio carrousel***/
+.carrousel-item img{
+    height: 400px;
+    width: 400px;
+    padding: 0px;
+    margin: 0px;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+    width: 100%;       /* Ocupa todo el ancho del contenedor */
+    height: 100%;      /* Ocupa el 100% de la altura del contenedor */
+}
+
+.carousel-item {
+    transition: transform 0.9s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/*** fin carrousel***/
+
+/** inicio Categorias**/
+#categorias{
+    margin-bottom: 20px;
+}
+
+#categorias ul{
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#categorias ul>li {
+    display: block;
+    border: 2px solid transparent;
+    transition: opacity .3s;
+}
+
+#categorias ul>li a {
+    text-decoration: none;
+}
+#categorias img {
+    height: auto;
+    max-height: none;
+}
+
+/***** inicio FOOTER ******/
+footer{
+    display: flex;
+    justify-content: space-between;  /* Espacio entre logo y menú */
+    align-items: center;             /* Alineación vertical centrada */
+    padding: 1rem 2rem;              /* Espaciado interno */
+    background-color: #229acd;          /* Fondo oscuro */
+    color: #fff;                     /* Texto blanco */
+    flex-wrap: wrap;                  /* Permite que los elementos se ajusten a nuevas líneas si es necesario */
+}
+
+#datos p {
+    font-size: 14px;
+}
+
+#datos {
+    width:300px;
+    height: 180px;
+    float:left;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+#derechos{
+    background-color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para el footer */
+.footer {
+    /* background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-family: Arial, sans-serif; */
+    margin-top: 10px;
+    text-align: center;
+    padding: 15px;
+}
+
+.footer p {
+    /* margin: 0; */
+    font-size: 14px;
+    padding: 10px;
+
+    color: #fff;
+    margin: 0 5px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+
+.social-icons .icon:hover {
+    color: #00bcd4;
+}
+
+#derechos {
+    width: 100%;
+    text-align: center;
+    padding: 1px 0;
+    background-color: #444;
+    margin-top: 20px;
+}
+
+#derechos p {
+    font-size: 12px;
+    color: #bbb;
+}
+
+/***** fin FOOTER******/
