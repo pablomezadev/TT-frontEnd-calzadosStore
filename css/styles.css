@@ -60,10 +60,15 @@ define la escalabilidad.
     display: flex;
     justify-content: space-between;  /* Espacio entre elementos */
     align-items: center;             /* Alineación vertical centrada */
-    padding: 0.1rem;              /* Espaciado interno */
+    /*padding: 0.1rem;*/              /* Espaciado interno */
     background-color: #229acd;          /* Fondo oscuro */
     color: #fff;                     /* Texto blanco */
     flex-wrap: wrap;                  /* Permite que los elementos se ajusten a nuevas líneas si es necesario */
+    padding: 0rem 0rem ;  
+    top: 10px;
+    position: fixed; 
+    width: 100%;                      /* Hace que el header ocupe todo el ancho */
+    z-index: 1000;
 }
 
   /* Estilo del logo */
@@ -79,16 +84,21 @@ define la escalabilidad.
         background-color: #229acd;
     }
 
- a img {
+ .container-fluid a img {
     max-width: 100%;   /* Asegura que el enlace ocupe todo el espacio disponible */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     padding: 0px;
-    margin: 15px;
+    margin: 0px;
     width: 100px;  /* Tamaño del logo */
     height: auto;  /* Mantén la proporción del logo */
+    padding: 0;
   } 
 
 /** bootstrap NAV BAR**/
+nav{
+    background-color: #229acd;
+}
+
 .navbar {
     /* background-color: #229acd; */
     padding: 0px;
@@ -107,28 +117,37 @@ define la escalabilidad.
     color: aliceblue;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.navbar-toggler{
+    margin-right: 10px;
+    padding-right: 0px;
+}
 
 /*** inicio Carrito ***/
 
-
-/*** USO ESTE ***/
 #cart-icon {
-    /* position: fixed; */
-    top: 50px;
+    position: fixed;
+    top: 30px;
+    width: 40px;
     /* align-items: center ; */
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     background-color: var(--color-principal);
-    padding: 10px;
-    right: 50px;  /* Esto lo coloca a 20px del margen derecho */
-    font-size: 24px;
+    padding: 5px;
+    right: 40px;  /* Esto lo coloca a 20px del margen derecho */
+    font-size: 18px;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     /* z-index: 900; */
     max-height: 100%;
     max-width: 100%;
     overflow-y: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#cart-icon:hover{
+    filter: brightness(1.2); /* Aclara un poco la imagen */
+    transform: scale(1.05); /* Hace que la imagen crezca un 5% */
 }
 
 
@@ -138,7 +157,7 @@ define la escalabilidad.
     right: 4px;
     background-color: green;
     color: white;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     width: 15px;
     height: 15px;
@@ -160,9 +179,6 @@ define la escalabilidad.
 
 /*** fin Carrito***/
 
-
-
-
 h1,h3{
     color: rgb(255, 255, 255);
     background-color:#000000;
@@ -175,34 +191,12 @@ h1,h3{
     opacity: 0.8;
 }
 
-#categorias{
+/* #categorias{
     display: flex ;
     background-color: #555;
-}
-
-iframe{
-    height: 400px;
-}
-/*Regla general: usaremos CLASS para estilos repetidos y ID para estilos unicos*/
-
-#introduccion {
-    color: rgb(6, 4, 149);
-    font-style: italic;
-    font-weight: bold;
-}
-
-.parrafos{
-    color: black; 
-    font-size: 15px;
-}
-
-/* header{
-    background-color:#348848;
 } */
 
-nav{
-    background-color: #229acd;
-}
+/*Regla general: usaremos CLASS para estilos repetidos y ID para estilos unicos*/
 
 /* ESPECIFICIDAD INICIO:
 Definiciones
@@ -245,44 +239,68 @@ Odenados de mayor a menor relevancia
 .carrousel-item img{
     height: 400px;
     width: 400px;
-    padding: 0px;
-    margin: 0px;
+    /* padding: 0px; */
     object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
     width: 100%;       /* Ocupa todo el ancho del contenedor */
     height: 100%;      /* Ocupa el 100% de la altura del contenedor */
 }
 
 .carousel-item {
+    /* margin: 0; */
     transition: transform 0.9s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+main{
+    margin-top: 105px;
+}
 /*** fin carrousel***/
 
 /** inicio Categorias**/
-#categorias{
-    margin-bottom: 20px;
-}
-
-#categorias ul{
-    overflow: hidden;
+#categorias {
     display: flex;
+    flex-wrap: wrap;  /* Permite que los elementos se envuelvan a la siguiente línea */
+    justify-content: space-evenly; /* Distribuye los elementos de manera uniforme */
+    background-color: #555;
+}
+
+#categorias ul {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+    padding: 0;
+    margin: 0;
     justify-content: space-evenly;
+    list-style-type: none;
+    width: 100%; /* Hace que el contenedor ocupe todo el ancho disponible */
 }
 
-#categorias ul>li {
-    display: block;
-    border: 2px solid transparent;
-    transition: opacity .3s;
+#categorias ul > li {
+    display: flex;
+    justify-content: center; /* Centra el contenido dentro de cada item */
+    margin: 10px;
+    transition: opacity 0.3s;
+    flex: 1 1 25%; /* Esto hace que los elementos se ajusten y ocupen el 25% del ancho */
+    max-width: 300px;  /* Asegura que las imágenes no crezcan demasiado */
 }
 
-#categorias ul>li a {
-    text-decoration: none;
-}
+/* Ajuste de imágenes */
 #categorias img {
+    width: 100%;  /* Las imágenes ocuparán el 100% del ancho del contenedor del li */
     height: auto;
-    max-height: none;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transiciones suaves para movimiento y aclarado */
 }
 
+/* Esto asegura que en pantallas más pequeñas, las imágenes se coloquen en una sola columna. */
+#categorias ul > li {
+    flex: 1 1 100%; /* En pantallas pequeñas las imágenes ocuparán el 100% del contenedor */
+    margin-bottom: 5px; /* Espacio entre las imágenes */
+}
+
+/* Efecto hover */
+#categorias ul > li:hover img {
+    filter: brightness(1.2); /* Aclara un poco la imagen */
+    transform: scale(1.05); /* Hace que la imagen crezca un 5% */
+}
 /***** inicio FOOTER ******/
 footer{
     display: flex;
@@ -309,18 +327,6 @@ footer{
 #derechos{
     background-color: #000000;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Estilos para el footer */
 .footer {
@@ -362,5 +368,4 @@ footer{
     font-size: 12px;
     color: #bbb;
 }
-
 /***** fin FOOTER******/
