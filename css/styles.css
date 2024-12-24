@@ -212,16 +212,6 @@ main{
   width: 100%; /* Hace que el contenedor ocupe todo el ancho disponible */
 }
 
-#categorias ul > li {
-  display: flex;
-  justify-content: center; /* Centra el contenido dentro de cada item */
-  margin: 0px;
-  transition: opacity 0.3s;
-  /* flex: 1 1 25%; */
-   /* Esto hace que los elementos se ajusten y ocupen el 25% del ancho */
-  /* max-width: 300px;   */
-  /* Asegura que las imágenes no crezcan demasiado */
-}
 
 /* Ajuste de imágenes */
 #categorias img, #banner img{
@@ -233,6 +223,12 @@ main{
 
 /* Esto asegura que en pantallas más pequeñas, las imágenes se coloquen en una sola columna. */
 #categorias ul > li {
+  display: flex;
+  justify-content: center;  
+  /* margin: 0px; */
+  transition: opacity 0.3s;
+  flex: 1 1 25%; /* Esto hace que los elementos se ajusten y ocupen el 25% del ancho */
+  max-width: 300px;   
   flex: 1 1 100%; /* En pantallas pequeñas las imágenes ocuparán el 100% del contenedor */
   margin-bottom: 5px; 
   object-fit: contain;
