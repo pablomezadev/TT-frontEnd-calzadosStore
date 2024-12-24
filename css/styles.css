@@ -1,14 +1,13 @@
-/*Root
-define el valor de la escala, 
-si no definimos un root por defecto hoy en dia vale 16 px*/
-:root{ 
-    font-size: 20px; /* escala 1.0*/
-    --color-principal: #229acd;
-}
+:root {
+    --color-principal-background: #3498db;
+    --color-principal-blanco: rgb(255, 255, 255);
+    --font-size: 16px;
+  }
 
 *{
     margin:0px;
     padding:0px;
+    /* color: aqua; */
 }
 
 /* UNIDADES DE MEDIDA
@@ -33,125 +32,104 @@ define la escalabilidad.
 }
 */
  body{
-    background-color: rgb(255, 255, 255); 
-    /* background-image: url("../img/fondo-shoes.webp") ; */
+    background-color: var(--color-principal-blanco); 
     background-image: url("../img/fondo-shoes.webp") ;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100px;
-    font-style: normal;
-    line-height: 1.6;
-    overflow-x: hidden;
+    /* font-optical-sizing: auto; */
+    /* font-weight: 100px; */
+    /* font-style: normal;  */
+    /* line-height: 1.6; */
+    /* line-height: 1;
+    overflow-x: hidden;*/
+    /* justify-content: space-between; */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 } 
 
-.sofia-sans-uniquifier{
-    font-family: "Sofia Sans", sans-serif, Arial;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-    }
-
 .contenedor{
-    /* display: block; */
-    opacity: 0.95;
-}
+    display: block;
+    /* opacity: 0.93; */
+    padding: 10px;
+    flex: 1;
 
-.header{
+
+    /*estos son para que el footer quede abajo*/
     display: flex;
-    justify-content: space-between;  /* Espacio entre elementos */
-    align-items: center;             /* Alineación vertical centrada */
-    /*padding: 0.1rem;*/              /* Espaciado interno */
-    background-color: #229acd;          /* Fondo oscuro */
-    color: #fff;                     /* Texto blanco */
-    flex-wrap: wrap;                  /* Permite que los elementos se ajusten a nuevas líneas si es necesario */
-    padding: 0rem 0rem ;  
-    top: 10px;
-    position: fixed; 
-    width: 100%;                      /* Hace que el header ocupe todo el ancho */
-    z-index: 1000;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-  /* Estilo del logo */
-    .logo{
-        padding: 20px;
-        position: relative;
-        /* margin-top: 8px; */
-        /* max-width: 10%; */
-        visibility: visible;
-        /**display: flex;**/ /* Para asegurar que sea un contenedor flexible */
-        justify-content: center; /* Centra el contenido dentro del logo */
-        align-items: center; /* Asegura que se alinee verticalmente */
-        background-color: #229acd;
-    }
-
- .container-fluid a img {
-    max-width: 100%;   /* Asegura que el enlace ocupe todo el espacio disponible */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 0px;
-    margin: 0px;
-    width: 100px;  /* Tamaño del logo */
-    height: auto;  /* Mantén la proporción del logo */
-    padding: 0;
-  } 
-
-/** bootstrap NAV BAR**/
-nav{
-    background-color: #229acd;
+h1,h3, h2{
+    color: var(--color-principal-blanco);
+    /* background-color:rgb(200, 200, 200); */
+    font-size: 25px;
+    
 }
 
-.navbar {
-    /* background-color: #229acd; */
-    padding: 0px;
-    margin: 0px;
+.img {
+    width: 100%;        /* Hace que la imagen ocupe todo el ancho disponible de su contenedor */
+    height: auto;       /* Mantiene la proporción de la imagen (relación de aspecto) */
   }
 
-  .navbar a{
-    display: block;
-    text-decoration: none;
-    color: aliceblue;
-  }
-  
-.navbar li a{
-    display: block;
-    text-decoration: none;
-    color: aliceblue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /** inicio navbar**/
+  .container-fluid img{
+    width: 50px;
+    height: 35px;
+}
+
+  nav{
+    /* position: fixed;  */
+    background-color: var(--color-principal-background);
+}
+.navbar-nav a{
+    color: rgb(255, 255, 255);
 }
 .navbar-toggler{
-    margin-right: 10px;
-    padding-right: 0px;
+    color: rgb(255, 255, 255);
+}
+/* nav li, nav li a{
+  color: var(--color-principal-blanco);
+} */
+
+.dropdown-menu li a{
+    color: #444;  
+}
+#offcanvasNavbar, .offcanvas-body{
+    background-color: var(--color-principal-background);
 }
 
-/*** inicio Carrito ***/
+/* .offcanvas-body a{
+    color: rgb(255, 255, 255);
+} */
 
 #cart-icon {
-    position: fixed;
-    top: 30px;
-    width: 40px;
+    /* position: fixed; */
+    position: relative;
+    /* top: 20px; */
+    width: 50px;
+    height: 40px;
+    justify-content: space-between;
     /* align-items: center ; */
     /* position: absolute; */
+    /* align-items: end; */
     display: flex;
-    background-color: var(--color-principal);
-    padding: 5px;
-    right: 40px;  /* Esto lo coloca a 20px del margen derecho */
-    font-size: 18px;
+    background-color: var(--color-principal-background);
+    padding: 0px;
+    /*right: 40px;*/  /* Esto lo coloca a 20px del margen derecho */
+    font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* z-index: 900; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
+    z-index: 900;
     max-height: 100%;
     max-width: 100%;
     overflow-y: auto;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-#cart-icon:hover{
-    filter: brightness(1.2); /* Aclara un poco la imagen */
-    transform: scale(1.05); /* Hace que la imagen crezca un 5% */
-}
-
-
 #cart-count {
+    /* position: relative; */
     position: absolute;
     top: 2px;
     right: 4px;
@@ -177,90 +155,34 @@ nav{
     transform: scale(1.2);
     }
 
-/*** fin Carrito***/
-
-h1,h3{
-    color: rgb(255, 255, 255);
-    background-color:#000000;
-    font-size: 25px;
-    font-family: 'Frankling Gothic Medium', 'Arial Narrow', Arial, serif;
+/*inicio main */
+main{ 
+    /* transition: padding-top 0.3s ease-in-out; */
+    /* position: fixed; */
+    margin-top: 55px;
+    
 }
-
-#prductos{
-    background-color: #fff;
-    opacity: 0.8;
-}
-
-/* #categorias{
-    display: flex ;
-    background-color: #555;
+/* main p{
+    background-color: #444;
 } */
 
-/*Regla general: usaremos CLASS para estilos repetidos y ID para estilos unicos*/
 
-/* ESPECIFICIDAD INICIO:
-Definiciones
-Odenados de mayor a menor relevancia
-1 - !important           -> cualquier selector  -> peso = 1
-2 - inline               -> (style dentro html) -> peso = 0,1,0,0,0
-3 - ID                   -> cualquier tag       -> peso = 0,0,1,0,0
-4 - Clases, atributos y pseudoclases ->         -> peso = 0,0,0,1,0
-5 - Etiquetas y pseudoelementos ->              -> peso = 0,0,0,0,1
+/** inicio sections**/
 
-*/
+/* section carrousel */
+#carrousel{
+    margin-top: auto;
+} 
 
-/*si el puntaje empata el navegador decide quien "gana" */
+/* fin carrousel */
 
-p{
-    color: rgb(255, 255, 255)!important; /* 1ro */ 
-    /* font-family: "Sofia Sans", sans-serif; */
-}
-
-
-/* ESPECIFICIDAD FIN:
-Definiciones
-Odenados de mayor a menor relevancia
-1 - !important           -> cualquier selector  -> peso = 1
-2 - inline               -> (style dentro html) -> peso = 0,1,0,0,0
-3 - ID                   -> cualquier tag       -> peso = 0,0,1,0,0
-4 - Clases, atributos y pseudoclases ->         -> peso = 0,0,0,1,0
-5 - Etiquetas y pseudoelementos ->              -> peso = 0,0,0,0,1
-*/
-
-.class-form{
-    font-family: "Sofia Sans", sans-serif, Arial;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-    color: aliceblue;
-}
-
-/*** inicio carrousel***/
-.carrousel-item img{
-    height: 400px;
-    width: 400px;
-    /* padding: 0px; */
-    object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
-    width: 100%;       /* Ocupa todo el ancho del contenedor */
-    height: 100%;      /* Ocupa el 100% de la altura del contenedor */
-}
-
-.carousel-item {
-    /* margin: 0; */
-    transition: transform 0.9s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-main{
-    margin-top: 105px;
-}
-/*** fin carrousel***/
-
-/** inicio Categorias**/
-#categorias {
+/** inicio id: Categorias**/
+#categorias, #banner {
     display: flex;
     flex-wrap: wrap;  /* Permite que los elementos se envuelvan a la siguiente línea */
     justify-content: space-evenly; /* Distribuye los elementos de manera uniforme */
-    background-color: #555;
+    background-color: var(--color-principal-blanco);
+    /* opacity: 0.9; */
 }
 
 #categorias ul {
@@ -283,17 +205,18 @@ main{
 }
 
 /* Ajuste de imágenes */
-#categorias img {
+#categorias img, #banner img{
     width: 100%;  /* Las imágenes ocuparán el 100% del ancho del contenedor del li */
     height: auto;
-    display: block;
+    /* display: block; */
     transition: transform 0.3s ease, filter 0.3s ease; /* Transiciones suaves para movimiento y aclarado */
 }
 
 /* Esto asegura que en pantallas más pequeñas, las imágenes se coloquen en una sola columna. */
 #categorias ul > li {
     flex: 1 1 100%; /* En pantallas pequeñas las imágenes ocuparán el 100% del contenedor */
-    margin-bottom: 5px; /* Espacio entre las imágenes */
+    margin-bottom: 5px; 
+    object-fit: contain;
 }
 
 /* Efecto hover */
@@ -301,71 +224,162 @@ main{
     filter: brightness(1.2); /* Aclara un poco la imagen */
     transform: scale(1.05); /* Hace que la imagen crezca un 5% */
 }
-/***** inicio FOOTER ******/
-footer{
-    display: flex;
-    justify-content: space-between;  /* Espacio entre logo y menú */
-    align-items: center;             /* Alineación vertical centrada */
-    padding: 1rem 2rem;              /* Espaciado interno */
-    background-color: #229acd;          /* Fondo oscuro */
-    color: #fff;                     /* Texto blanco */
-    flex-wrap: wrap;                  /* Permite que los elementos se ajusten a nuevas líneas si es necesario */
+
+
+/** inico publicidad **/
+
+#promocion {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 60px 20px;
 }
 
-#datos p {
-    font-size: 14px;
+#promocion h2 {
+    font-size: 2.5rem;
+    font-family: 'Sofia Sans', sans-serif;
 }
 
-#datos {
-    width:300px;
-    height: 180px;
-    float:left;
-    padding:10px;
-    box-sizing: border-box;
+#promocion p {
+    font-size: 1.2rem;
+    color: #555;
 }
 
-#derechos{
-    background-color: #000000;
+#promocion .btn {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.1rem;
 }
 
-/* Estilos para el footer */
-.footer {
-    /* background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    font-family: Arial, sans-serif; */
-    margin-top: 10px;
-    text-align: center;
-    padding: 15px;
-}
-
-.footer p {
-    /* margin: 0; */
-    font-size: 14px;
-    padding: 10px;
-
-    color: #fff;
-    margin: 0 5px;
-    font-size: 15px;
-    text-decoration: none;
+#promocion .btn:hover {
+    background-color: #0056b3;
+    border-color: #004085;
 }
 
 
-.social-icons .icon:hover {
-    color: #00bcd4;
-}
+/**fin publicidad**/
 
-#derechos {
-    width: 100%;
-    text-align: center;
-    padding: 1px 0;
-    background-color: #444;
-    margin-top: 20px;
-}
+/** fin sections**/
 
-#derechos p {
-    font-size: 12px;
-    color: #bbb;
-}
+    /***** inicio FOOTER ******/
+    footer {
+        /* background-color: #333; */
+        background-color: var(--color-principal-background);
+        /* color: white; */
+        color: var(--color-principal-blanco);
+        padding: 30px 20px 5px 20px;
+        font-family: 'Sofia Sans', sans-serif;
+        text-align: center;
+        position: relative;
+      }
+      
+      /* Contenedor para las columnas */
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between;
+        gap: 20px;
+      }
+      
+      /* Estilo para las columnas */
+      .footer-column {
+        flex: 1 1 30%; /* Toma 30% del espacio disponible y puede reducirse */
+        /* min-width: 280px;
+        max-width: 320px; */
+        min-width: 400px;
+        max-width: 410px;
+        text-align: left;
+      }
+      
+      .footer-column h4 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: white;
+      }
+      
+      .footer-column ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+      
+      .footer-column ul li a {
+        text-decoration: none;
+        /* color: #bbb; */
+        color: var(--color-principal-blanco);
+        font-size: 14px;
+      }
+      
+      .footer-column ul li a:hover {
+        color: #bbb;
+      }
+      
+      /* Estilo para los enlaces de redes sociales */
+      .social-links {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-direction: column;
+      }
+      
+      .social-links li {
+        display: inline-block;
+      }
+      
+      .social-links li a {
+        text-decoration: none;
+        /* color: #bbb; */
+        /* color: var(--color-principal-blanco); */
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .social-links li a:hover {
+        color: #fff;
+      }
+      
+      /* Iconos para las redes sociales (utilizando clases de CSS para crear iconos) */
+      .icon {
+        font-size: 24px;
+        transition: transform 0.3s ease;
+      }
+      
+      .social-links li a:hover .icon {
+        transform: scale(1.2);
+      }
+      
+      .icon.facebook:before {
+        content: '\f09a'; /* Código de icono de Facebook */
+      }
+      
+      .icon.whatsapp:before {
+        content: '\f232'; /* Código de icono de WhatsApp */
+      }
+      
+      .icon.instagram:before {
+        content: '\f16d'; /* Código de icono de Instagram */
+      }
+      
+      /* Derechos de autor */
+      .footer-copyright {
+        background-color: #444;
+        padding: 0px 0;
+        color: var(--color-principal-blanco);
+        font-size: 14px;
+      }
+      
+      .footer-copyright p {
+        margin: 0;
+      }
+      
+      /* Agregar una sombra suave a los iconos para mejorar la visibilidad */
+      .icon {
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+      }
 /***** fin FOOTER******/
