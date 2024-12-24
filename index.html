@@ -16,47 +16,67 @@
         rel="stylesheet">
 </head>
 
-<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+<body>
     <div class="contenedor">
         <header class="header">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar fixed-top navbar-expand-lg">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    <img src="img/logo.png" alt="Logo" class="d-inline-block align-text-top">
+                    <button class="navbar-toggler btn-outline-light" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <!-- logo -->
-                    <a class="navbar-brand" href="#">
-                        <img src="img/logo.png" alt="Logo" class="d-inline-block align-text-top">
-                    </a>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">CalzadoStore</h5> -->
+                            <img src="img/logo.png" alt="Logo" class="d-inline-block align-text-top">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/productos.html">Productos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/contacto">Contacto</a>
+                                </li>
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Dropdown
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                            <!-- <form class="d-flex mt-2" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
+                                <button class="btn btn-outline-light" type="submit">Buscar</button>
+                            </form> -->
+                        </div>
+                    </div>
 
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <!-- <a class="navbar-item" href="#">Hidden brand</a> -->
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Inicio</a>
+                    <div id="cart-icon">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"> <a class="nav-link" href="#">
+                                    <i class="fas fa-shopping-cart"></i></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="pages/productos.html"">Productos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contacto</a>
-                            </li>
+                            <span id="cart-count">0</span>
                         </ul>
                     </div>
                 </div>
             </nav>
-
-            <!--CARRITO  -->
-            <div id="cart-icon">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link" href="#">
-                            <i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                    <span id="cart-count">0</span>
-                </ul>
-            </div>
 
         </header>
 
@@ -91,55 +111,84 @@
                 <!-- <h3>categorias </h3> -->
                 <ul>
                     <li>
-                        <a href="">
+                        <a href="pages/productos.html">
                             <img src="img/cateegorias/hombre.png" alt="hombre">
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="pages/productos.html">
                             <img src="img/cateegorias/mujer.png" alt="">
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="pages/productos.html">
                             <img src="img/cateegorias/niños.png" alt="">
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="pages/productos.html">
                             <img src="img/cateegorias/todos.png" alt="">
                         </a>
                     </li>
                 </ul>
             </section>
+
+            <section id="promocion" class="text-center py-5" style="background-color: #f5f5f5;">
+                <div class="container">
+                    <h2 class="display-4 mb-4" style="font-family: 'Sofia Sans', sans-serif; color: #333;">
+                        ¡Transforma tu estilo con CalzadoStore!
+                    </h2>
+                    <p class="lead mb-4" style="font-family: 'Sofia Sans', sans-serif; color: #555;">
+                        Encuentra la mejor selección de calzado para toda la familia. Desde modelos exclusivos para
+                        hombres y mujeres hasta opciones para los más pequeños. ¡La comodidad y el estilo que mereces
+                        están aquí!
+                    </p>
+                    <a href="pages/productos.html" class="btn btn-primary btn-lg"
+                        style="background-color: #007bff; border-color: #007bff;">
+                        Descubrí nuestros productos !
+                    </a>
+                </div>
+            </section>
+
+            <section id="banner">
+                <img src="img/cateegorias/banner-compra-por-marca.png" alt="">
+            </section>
         </main>
 
-        <footer class="footer">
-            <div id="datos">
-                <h4>
-                    Nosotros
-                </h4>
-                <p>Av Siempre Viva 666</p>
-                <p>Telef: 1155668877</p>
-                <p>info@talentotech.edu.ar</p>
-            </div>
-            <div id="datos">
-                <h4>Redes</h4>
-                <p>Whatsapp <a href="#" class="icon"><i class="fa-brands fa-whatsapp"
-                            style="color: greenyellow;"></i></a></p>
-                <p>Instagram<a href="#" class="icon"><i class="fa-brands fa-instagram"
-                            style="color: rgb(196, 6, 196);"></i></a></p>
-                <p>Facebook<a href="#" class="icon"><i class="fa-brands fa-facebook"
-                            style="color: rgb(0, 0, 252);"></i></a></p>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>Nosotros</h4>
+                    <ul>
+                        <li>Av Siempre Viva 666</li>
+                        <li>Tel.: 1155668877</li>
+                        <li><a href="mailto:info@calzadostore.com">info@calzadostore.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Redes Sociales</h4>
+                    <ul class="social-links">
+                        <li><a href="https://www.facebook.com/calzadostore" target="_blank" aria-label="Facebook"><i
+                                    class="fa-brands fa-instagram"></i> Facebook </a></li>
+                        <li><a href="https://wa.me/1155668877" target="_blank" aria-label="WhatsApp"><i
+                                    class="fa-brands fa-whatsapp"></i> WhatsApp </a></li>
+                        <li><a href="https://www.instagram.com/calzadostore" target="_blank" aria-label="Instagram"><i
+                                    class="fa-brands fa-instagram"></i> Instagram </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Suscribite</h4>
+                    <ul>
+                        <li>Compra 100% Segura</li>
+                        <li>Envíos Gratis</li>
+                        <li>Descuentos exclusivos</li>
+                    </ul>
+                </div>
             </div>
 
-            <div id="datos">
-                <h4>Suscribite</h4>
-                <p>Compra %100 Segura <a href="#" class="icon"></a></p>
-                <p>Envios Gratis<a href="#" class="icon"></a></p>
-                <p>Descuentos<a href="#" class="icon"></a></p>
-            </div>
-            <div id="derechos">
+            <div class="footer-copyright">
                 <p>&copy; 2024 CalzadoStore. Todos los derechos reservados.</p>
             </div>
         </footer>
