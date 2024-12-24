@@ -2,6 +2,7 @@
     --color-principal-background: #3498db;
     --color-principal-blanco: rgb(255, 255, 255);
     --font-size: 16px;
+    --color-link-activo: #42539a;
   }
 
 *{
@@ -303,6 +304,7 @@ main{
       
       .footer-column ul li {
         margin-bottom: 10px;
+        font-size: 18px;
       }
       
       .footer-column ul li a {
@@ -334,7 +336,7 @@ main{
         text-decoration: none;
         /* color: #bbb; */
         /* color: var(--color-principal-blanco); */
-        font-size: 18px;
+        font-size: 14px;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -346,7 +348,7 @@ main{
       
       /* Iconos para las redes sociales (utilizando clases de CSS para crear iconos) */
       .icon {
-        font-size: 24px;
+        font-size: 14px;
         transition: transform 0.3s ease;
       }
       
@@ -383,3 +385,10 @@ main{
         text-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
       }
 /***** fin FOOTER******/
+
+/** Extras **/
+
+#sitioEnConstruccion{
+    width: 100%;
+    height: auto;
+}
