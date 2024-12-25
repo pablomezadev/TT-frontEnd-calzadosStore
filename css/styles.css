@@ -2,7 +2,7 @@
   --color-principal-background: #3498db;
   --color-principal-blanco: rgb(255, 255, 255);
   --font-size: 16px;
-  --color-link-activo: #42539a;
+  --color-link-activo: rgb(135, 206, 235);
 }
 
 *{
@@ -57,8 +57,6 @@ body{
   padding: 10px;
   margin: 0px;
   flex: 1;
-
-
   /*estos son para que el footer quede abajo*/
   display: flex;
   flex-direction: column;
@@ -90,6 +88,7 @@ h1,h3, h2{
 /** inicio navbar**/
 .container-fluid img{
   width: 50px;
+  /* height: 35px; */
   height: 35px;
 }
 
@@ -100,6 +99,62 @@ nav{
 .navbar-nav a{
   color: rgb(255, 255, 255);
 }
+
+/* logo */
+.active{
+  color: rgb(173, 216, 230)!important;
+}
+
+.nav-link:hover{
+  color:var(--color-link-activo)!important;
+}
+
+.navbar-toggler-icon, .btn-outline-light, .navbar-toggler-icon, .btn-close{
+  color: var(--color-principal-blanco)!important;
+}
+
+/* .branding-link {
+  font-family: 'Sofia Sans', sans-serif!important;
+  font-size: 2rem; 
+  color: var(--color-principal-blanco)!important;
+  font-weight: bold!important;
+  text-transform: uppercase!important;
+  text-decoration: none!important;
+  letter-spacing: 1px!important;
+}
+.branding-link:hover {
+  color: var(--color-link-activo)!important;
+} */
+
+/* .branding-link {
+  font-family: 'Sofia Sans', sans-serif!important;
+  font-size: 2rem!important;
+  color: var(--color-principal-blanco)!important;
+  font-weight: 700!important;
+  text-decoration: none!important;
+}
+.branding-link:hover {
+  color: var(--color-link-activo)!important;
+  font-style: italic!important;
+} */
+
+.branding-link  {
+  font-family: 'Sofia Sans', sans-serif!important; 
+  font-weight: 700!important; 
+  font-size: 24px!important; 
+  color: var(--color-principal-blanco)!important; 
+  text-decoration: none!important;
+  letter-spacing: 2px!important; 
+  text-transform: uppercase!important; 
+  display: inline-block!important;
+  transition: color 0.3s ease, transform 0.3s ease!important;
+}
+
+.branding-link:hover {
+  color: #3498db; /* Efecto hover para darle interacción */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño en hover */
+}
+
 .navbar-toggler{
   color: rgb(255, 255, 255);
 }
@@ -113,7 +168,7 @@ color: var(--color-principal-blanco);
 /* #offcanvasNavbar, .offcanvas-body{ */
 #offcanvasNavbar, .offcanvas-body{
   background-color: var(--color-principal-background);
-  padding: 10px;
+  /* padding: auto; */
 }
 
 /* .offcanvas-body a{
@@ -125,6 +180,7 @@ color: var(--color-principal-blanco);
   position: relative;
   /* top: 20px; */
   width: 50px;
+  /* height: 40px; */
   height: 40px;
   justify-content: space-between;
   /* align-items: center ; */
@@ -149,12 +205,15 @@ color: var(--color-principal-blanco);
   /* position: relative; */
   position: absolute;
   top: 2px;
-  right: 4px;
+  /* visibility: inherit; */
+  /* visibility: hidden; */
+  right:30%;
   background-color: green;
   color: white;
   font-size: 12px;
   font-weight: bold;
   width: 15px;
+  /* height: 15px; */
   height: 15px;
   border-radius: 80%;
   display: flex;
@@ -162,6 +221,10 @@ color: var(--color-principal-blanco);
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
+  }
+
+  .cart-count:hover, .fas:hover{
+    color: var(--color-link-activo)!important;
   }
   
   #cart-count.hidden {
@@ -195,6 +258,7 @@ main{
 
 /** inicio id: Categorias**/
 #categorias, #banner {
+  padding-top: 10px;
   display: flex;
   flex-wrap: wrap;  /* Permite que los elementos se envuelvan a la siguiente línea */
   justify-content: space-evenly; /* Distribuye los elementos de manera uniforme */
@@ -287,6 +351,7 @@ main{
       font-family: 'Sofia Sans', sans-serif;
       text-align: center;
       position: relative;
+      margin-top: auto;
     }
     
     /* Contenedor para las columnas */
@@ -408,3 +473,76 @@ main{
   width: 100%;
   height: auto;
 }
+
+
+/* inicio FORMULARIO */
+.contact-form {
+  /* max-width: 600px; */
+  max-width: 80%;
+  margin: 60px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h1 {
+  margin-bottom: 20px;
+  color: #3498db;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #2979b3;
+}
+.contact-form .hidden {
+  display: none;
+}
+
+/* Success Message */
+#mensaje-enviado {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* header ul {
+      flex-direction: column;
+  } */
+
+  .contact-form {
+      padding: 15px;
+  }
+}
+
+/* fin FORMULARIO */
