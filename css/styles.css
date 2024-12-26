@@ -730,6 +730,13 @@ footer {
 
 /* Responsividad: 2 productos por fila en pantallas pequeñas (350px) */
 @media (max-width: 480px) {
+  .product-section{
+    padding: 15px 5px;
+  }
+
+  .product-card h3{
+    color: #000000;
+  }
   .product-card {
     flex: 0 1 calc(50% - 10px);
     /* 2 productos por fila */
@@ -775,7 +782,7 @@ footer {
   padding: 10px;
   cursor: pointer;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 12px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: 80%;
   height: 20%;
