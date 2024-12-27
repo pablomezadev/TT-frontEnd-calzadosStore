@@ -884,3 +884,216 @@ footer {
   color: rgb(224, 176, 21);
 } */
 /*** fin RESEÑAS ***/
+
+/*** inicio SECCION CARRITO ***/
+
+/** productos en carrito **/
+  
+/* Estilo para la seccion - carrito */
+.carrito-section {
+  /* Fondo blanco con 80% de opacidad Lindo para aplicar: */
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin: 5px 0px;
+}
+
+.carrito-section h2{
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  /* justify-content: center; */
+}
+
+#contenedor-carrito-det{
+  /* border: var(--color-link-activo) 1px solid; */
+  padding: 5px 10px;
+  width: 100%;
+}
+
+#contenedor-carrito-det:hover{
+  /* border: var(--color-link-activo) 1px solid; */
+  filter: brightness(1.1);
+  /* Aclara un poco la imagen */
+  transform: scale(1.0095);
+  transition: 0.35s;
+  /* Hace que la imagen crezca un 5% */
+}
+
+/* Estilo detalle carrito-productos */
+.producto-carrito {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: space-between;
+  padding: 5px;
+  /* background-color:var(--color-principal-background); */
+  background-color:var(--color-principal-blanco);
+  
+  /* margin-bottom: 30px;
+  padding: 15px; */
+  
+  /* background-color: #fff; */
+  border-radius: 0px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* var(--color-link-activo) */
+  /* border: #000000 1px solid; */
+  /* border: #000000 1px solid; */
+}
+
+/* Títulos y texto dentro de la sección */
+.carrito-section h1 {
+  /* display: flex; */
+  /* text-align: center; */
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.carrito-section img{
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.carrito-section span{
+padding: 5px;
+}
+
+.carrito-section #producto-carrito-descripcion-compra{
+  display: flex;
+  justify-content: end;
+  border:  var(--color-link-activo) solid 1px;
+  background-color: var(--color-principal-blanco);
+  border-radius: 0px;
+}
+
+.producto-carrito h3{
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+}
+
+#seccion-carrito-precio-total{
+  font-weight: bold;
+}
+
+/* Botones */
+/* button { */
+  /* background-color: #FF5722; */
+  /* color: white;
+  border: 1px solid;
+  padding: 10px 20px;
+  margin: 10px 0px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+} */
+
+  /* button:hover {
+    background-color: #FF7043;
+  } */
+
+/* Botón de "Añadir al carrito" */
+.btn-agregar {
+  border: none;
+  width: 20px;
+  background-color: var(--color-principal-blanco);
+  border-radius: 4px;
+}
+
+.btn-agregar:hover {
+  background-color: var(--color-link-activo);
+  
+  filter: brightness(1.2);
+  /* Aclara un poco la imagen */
+  transform: scale(1.05);
+  /* Hace que la imagen crezca un 5% */
+}
+
+/* Botón de "Ver detalles" */
+.btn-eliminar {
+  border: none;
+  width: 20px;
+  background-color: var(--color-principal-blanco);
+  border-radius: 4px;
+}
+
+.btn-eliminar:hover {
+  background-color: var(--color-link-activo);
+  
+  filter: brightness(1.2);
+  /* Aclara un poco la imagen */
+  transform: scale(1.05);
+  /* Hace que la imagen crezca un 5% */
+}
+
+#seccion-carrito-disponible{
+  color: #28a745;
+}
+/** media queries seccion-carrito**/
+
+
+/* .producto-carrito{
+  flex: 0 1 calc(50% - 5px);
+} */
+
+
+/* estilo para la sección resumen del carrito */
+.carrito-resumen {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.carrito-resumen-contenedor {
+  background-color: var(--color-principal-blanco);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.carrito-resumen h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.resumen-detalles{
+  display: grid;
+  position: relative;
+  justify-content: flex-end;
+}
+
+.resumen-detalles p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.resumen-detalles p.total {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-top: 10px;
+}
+
+.resumen-botones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.resumen-botones .btn {
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+
+/*** fin SECCION CARRITO ***/
