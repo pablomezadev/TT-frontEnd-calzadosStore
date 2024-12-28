@@ -617,6 +617,7 @@ footer {
 .product-card h3 {
   font-size: 1.2rem;
   margin: 10px 0;
+  color: #000;
 }
 
 .product-card .quantity {
@@ -1097,3 +1098,74 @@ padding: 5px;
 
 
 /*** fin SECCION CARRITO ***/
+
+/***** inicio estilos carrito base descartable !*******/
+
+#carrito{
+  background-color:var(--color-principal-background);
+}
+
+#checkout-modal{
+  background-color: #155724;
+}
+
+/***** fin estilos carrito base descartable !*******/
+
+/************************** inicio Modal Confirmacion Agregar Producto al carrito **************************/
+/* Estilos del modal */
+.modal {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.confirm {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cancel {
+  background-color: #f44336;
+  color: white;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/************************** finModal Confirmacion Agregar Producto al carrito **************************/
