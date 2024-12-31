@@ -1169,3 +1169,22 @@ button {
 
 
 /************************** finModal Confirmacion Agregar Producto al carrito **************************/
+
+/* Pagina Carrito detalle lista de productos */
+
+#eliminarProducto{
+  max-width: 80px;
+  max-height: 36px;
+  font-size: 14px;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* inicio Resumen de tu carrito */
+
+/* .carrito-resumen-contenedor h2{ */
+.carrito-section h2, .carrito-resumen-contenedor h2{
+  color: #000;
+}
+
+/* inicio Resumen de tu carrito */
