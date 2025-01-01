@@ -539,7 +539,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-  width: 25%;
+  width: 45%;
+  font-size: 14px;
   /* background-color: #000; */
 }
 
@@ -552,7 +553,7 @@ footer {
 
 #mensaje-enviado {
   margin-top: 20px;
-  padding: 10px;
+  padding: 12px;
   background-color: #d4edda;
   color: #155724;
   border: 1px solid #c3e6cb;
@@ -565,6 +566,23 @@ footer {
   .contact-form {
     padding: 15px;
   }
+
+  .terminosCondiciones p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    width: 70%;
+    font-size: 10px;
+    /* background-color: #000; */
+  }
+  
+  .terminosCondiciones input{
+    width: 10%;
+    padding: 0px;
+    margin: 10px;
+    /* background-color: #000; */
+  }  
 }
 
 /* fin FORMULARIO */
