@@ -1,68 +1,68 @@
 // validacion formulario de contacto
-// console.log('estoy usando js...');
+console.log('estoy usando js...');
 
-// function verificarCamposCompletos() {
-//     const nombre = document.getElementById('nombre')?.value.trim();  // Añadir '?', para evitar error si el formulario no está presente.
-//     const correo = document.getElementById('correo')?.value.trim();
-//     const mensaje = document.getElementById('mensaje')?.value.trim();
+function verificarCamposCompletos() {
+    const nombre = document.getElementById('nombre')?.value.trim();  // Añadir '?', para evitar error si el formulario no está presente.
+    const correo = document.getElementById('correo')?.value.trim();
+    const mensaje = document.getElementById('mensaje')?.value.trim();
 
-//     if (nombre && correo && mensaje) {
-//         console.log("Todos los campos están completos.");
-//         return true;
-//     } else {
-//         console.log("Por favor, completa todos los campos antes de enviar el formulario.");
-//         return false;
-//     }
-// }
+    if (nombre && correo && mensaje) {
+        console.log("Todos los campos están completos.");
+        return true;
+    } else {
+        console.log("Por favor, completa todos los campos antes de enviar el formulario.");
+        return false;
+    }
+}
 
-// // logica del formulario de contacto
-// document.addEventListener("DOMContentLoaded", () => {
-//     // solo se ejecuta si el formulario de contacto esta presente en el DOM
-//     if (document.getElementById('form-contacto')) {
-//         console.log('Formulario de contacto encontrado');
+// logica del formulario de contacto
+document.addEventListener("DOMContentLoaded", () => {
+    // solo se ejecuta si el formulario de contacto esta presente en el DOM
+    if (document.getElementById('form-contacto')) {
+        console.log('Formulario de contacto encontrado');
 
-//         document.getElementById('form-contacto').addEventListener('submit', async function (event) {
-//             event.preventDefault();
+        document.getElementById('form-contacto').addEventListener('submit', async function (event) {
+            event.preventDefault();
 
-//             if (!verificarCamposCompletos()) {
-//                 return; // Si los campos no están completos, no se envía el formulario
-//             }
+            if (!verificarCamposCompletos()) {
+                return; // Si los campos no están completos, no se envía el formulario
+            }
 
-//             const form = event.target;
-//             const formData = new FormData(form);
+            const form = event.target;
+            const formData = new FormData(form);
 
-//             try {
-//                 const response = await fetch('https://formspree.io/f/myzyjvve', {
-//                     method: 'POST',
-//                     body: formData,
-//                     headers: {
-//                         'Accept': 'application/json'
-//                     }
-//                 });
+            try {
+                const response = await fetch('https://formspree.io/f/myzyjvve', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-//                 if (response.ok) {
-//                     // Mostrar alerta de éxito con bootstrap
-//                     const alerta = document.getElementById('alerta-envio-bootstrap');
-//                     alerta.classList.remove('hidden');
-//                     alerta.classList.add('show');
-//                     document.getElementById('mensaje-error').classList.add('hidden');
-//                     form.reset(); // Reinicio de formulario
-//                     setTimeout(() => {
-//                         alerta.classList.remove('show');
-//                     }, 5000);
+                if (response.ok) {
+                    // Mostrar alerta de éxito con bootstrap
+                    const alerta = document.getElementById('alerta-envio-bootstrap');
+                    alerta.classList.remove('hidden');
+                    alerta.classList.add('show');
+                    document.getElementById('mensaje-error').classList.add('hidden');
+                    form.reset(); // Reinicio de formulario
+                    setTimeout(() => {
+                        alerta.classList.remove('show');
+                    }, 5000);
 
-//                     console.log("Formulario enviado con éxito.");
-//                 } else {
-//                     throw new Error('Error al enviar el formulario');
-//                 }
-//             } catch (error) {
-//                 const mensajeError = document.getElementById('mensaje-error');
-//                 mensajeError.classList.remove('hidden');
-//                 console.error('Error:', error);
-//             }
-//         });
-//     }
-// });
+                    console.log("Formulario enviado con éxito.");
+                } else {
+                    throw new Error('Error al enviar el formulario');
+                }
+            } catch (error) {
+                const mensajeError = document.getElementById('mensaje-error');
+                mensajeError.classList.remove('hidden');
+                console.error('Error:', error);
+            }
+        });
+    }
+});
 
 // *******************************************************  PRODUCTOS ******************************************************************
 
@@ -498,7 +498,12 @@ if (document.getElementById("confirmModal") || document.querySelector("carrito-s
     function agregarAlCarritoConConfirmacion(productItem) {
         productoConfirmado = productItem; // Guardamos el producto que el usuario está intentando agregar
         if (productItem.stock == 0) {
-            alert("No hay stock disponible en este momento")
+            Swal.fire({
+                title: '¡Error!',
+                text: 'No Hay stock disponible.',
+                icon: 'error',
+                confirmButtonText: 'Intentar de nuevo'
+            });
         } else {
             abrirModal();
         }
@@ -771,8 +776,16 @@ function renderizarSeccionCarritoResumen() {
                     // Aquí puedes agregar la lógica de vaciar el carrito, por ejemplo:
                     // Restaurar el stock de productos, limpiar el localStorage, etc.
                     localStorage.removeItem('carrito');
-                    alert("Carrito vaciado con éxito.");
-                    renderizarSeccionCarritoResumen();
+                    // alert("Carrito vaciado con éxito.");
+                    Swal.fire({
+                        title: '¡ :( !',
+                        text: 'Carrito vaciado con éxito..',
+                        icon: 'success',
+                        confirmButtonText: 'Aceptar'
+                    });
+                    // renderizarSeccionCarritoListaProductos()
+                    // renderizarSeccionCarritoResumen();
+                    renderizarPaginaCarrito()
                 }
 
                 // Mostrar el modal
@@ -918,7 +931,13 @@ function agregarProducto(id) {
 
     if (productoConfirmado) {
         if (JSON.stringify(productoConfirmado).stock === 0) {
-            alert("No hay stock disponible.");
+            // alert("No hay stock disponible.");
+            Swal.fire({
+                title: '¡Error!',
+                text: 'No Hay stock disponible.',
+                icon: 'error',
+                confirmButtonText: 'Intentar de nuevo'
+            });
         } else {
             // abrirModal();
             agregarAlCarritoProducto(productoConfirmado);
@@ -943,19 +962,19 @@ function disminuirCantidadProductosPorId(id) {
 
     if (productoConfirmado) {
         if (productoConfirmado.cantidad === 1) {
-            console.log(`producto confirmado cantidad= ${productoConfirmado}`)
-            eliminarProducto(productoConfirmado.id)
-            renderizarSeccionCarritoListaProductos()
-            renderizarSeccionCarritoResumen()
-            renderizarCarrito()
-            // alert("Se eliminó el producto de la lista.");
-            // Alerta de éxito
+            console.log(`producto confirmado = ${JSON.stringify(productoConfirmado.id)}`)
             Swal.fire({
                 title: '¡ :( !',
                 text: 'El producto ha sido eliminado del carrito con exito.',
                 icon: 'success',
                 confirmButtonText: 'Aceptar'
             });
+            eliminarProducto(productoConfirmado.id)
+            renderizarSeccionCarritoListaProductos()
+            renderizarSeccionCarritoResumen()
+            renderizarCarrito()
+            // alert("Se eliminó el producto de la lista.");
+            // Alerta de éxito
         } else {
             // abrirModal();
             disminuyeCantidadDeUnProdPorId(productoConfirmado);
@@ -1013,7 +1032,13 @@ function disminuyeCantidadDeUnProdPorId(productItem) {
     // console.log(`Productos en carrito: ${JSON.stringify(carritoLocalStorage)}`)
 
     if (productItem.cantidad <= 0) {
-        alert("No hay suficientes productos disponibles.");
+        // alert("No hay suficientes productos disponibles.");
+        Swal.fire({
+            title: '¡Error!',
+            text: 'No Hay suficientes productos disponibles.',
+            icon: 'error',
+            confirmButtonText: 'Intentar de nuevo'
+        });
         eliminarProducto(productItem.id)
         renderizarSeccionCarritoListaProductos()
         // renderizarPaginaCarrito()

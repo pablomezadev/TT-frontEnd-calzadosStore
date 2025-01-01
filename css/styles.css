@@ -487,7 +487,6 @@ footer {
 
 /* inicio FORMULARIO */
 .contact-form {
-  /* max-width: 600px; */
   max-width: 90%;
   margin: 60px auto;
   padding: 40px;
@@ -535,7 +534,22 @@ footer {
   display: none;
 }
 
-/* Success Message */
+.terminosCondiciones p{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  width: 25%;
+  /* background-color: #000; */
+}
+
+.terminosCondiciones input{
+  width: 10%;
+  padding: 0px;
+  margin: 0px;
+  /* background-color: #000; */
+}
+
 #mensaje-enviado {
   margin-top: 20px;
   padding: 10px;
@@ -546,12 +560,8 @@ footer {
   display: none;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  /* header ul {
-      flex-direction: column;
-  } */
 
+@media (max-width: 768px) {
   .contact-form {
     padding: 15px;
   }
