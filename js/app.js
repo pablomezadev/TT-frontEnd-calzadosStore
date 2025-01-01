@@ -511,7 +511,15 @@ if (document.getElementById("confirmModal") || document.querySelector("carrito-s
 function agregarAlCarritoProducto(productItem) {
     // Verificar si hay stock disponible
     if (productItem.stock <= 0) {
-        alert("No hay suficiente stock disponible.");
+        // alert("No hay suficiente stock disponible.");
+        // Alerta de éxito
+        // Alerta de error
+        Swal.fire({
+            title: '¡Error!',
+            text: 'No Hay stock disponible.',
+            icon: 'error',
+            confirmButtonText: 'Intentar de nuevo'
+        });
         return;
     }
     console.log(`agregarAlCarrito - contenido de carrito en LS :${carritoLocalStorage}`)
@@ -641,7 +649,7 @@ function renderizarSeccionCarritoResumen() {
             });
             // iva = (subtotal - descuentos) * 0.21
             totalImpuestos = (subtotal - descuentos) * IMPUESTOS
-            total = (subtotal - descuentos) + totalImpuestos 
+            total = (subtotal - descuentos) + totalImpuestos
             console.log(`subtotal= ${subtotal}`)
             console.log(`descuentos= ${descuentos}`)
             // console.log(`IVA= ${iva.toFixed(2)}`)
@@ -771,7 +779,7 @@ function renderizarSeccionCarritoResumen() {
                 abrirModalVaciarCarrito();
             });
 
-            btnCheckout.addEventListener("click",()=>{
+            btnCheckout.addEventListener("click", () => {
                 confirmarCompra();
             })
 
@@ -940,7 +948,14 @@ function disminuirCantidadProductosPorId(id) {
             renderizarSeccionCarritoListaProductos()
             renderizarSeccionCarritoResumen()
             renderizarCarrito()
-            alert("Se eliminó el producto de la lista.");
+            // alert("Se eliminó el producto de la lista.");
+            // Alerta de éxito
+            Swal.fire({
+                title: '¡ :( !',
+                text: 'El producto ha sido eliminado del carrito con exito.',
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            });
         } else {
             // abrirModal();
             disminuyeCantidadDeUnProdPorId(productoConfirmado);
@@ -954,12 +969,35 @@ function disminuirCantidadProductosPorId(id) {
 
 // Función para eliminar un producto
 function eliminarProducto(id) {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    carrito = carrito.filter(p => p.id !== id); // Eliminar el producto por su ID
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    renderizarCarrito();
-    renderizarSeccionCarritoListaProductos()
-    renderizarSeccionCarritoResumen()
+    const productoEnCarrito = carritoLocalStorage.find(item => item.id === id);
+    Swal.fire({
+        title: `¿Estás seguro que queres eliminar: ${productoEnCarrito.titulo}?`,
+        text: "Esta acción no se puede deshacer.",
+        icon: 'warning',
+        showCancelButton: true,  // Muestra el botón de cancelar
+        confirmButtonColor: '#3085d6',  // Color del botón de confirmar
+        cancelButtonColor: '#d33',  // Color del botón de cancelar
+        confirmButtonText: 'Sí, eliminarlo',  // Texto del botón de confirmación
+        cancelButtonText: 'No, cancelar',  // Texto del botón de cancelación
+      }).then((result) => {
+        if (result.isConfirmed) {
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            carrito = carrito.filter(p => p.id !== id); // Eliminar el producto por su ID
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            renderizarCarrito();
+            renderizarSeccionCarritoListaProductos()
+            renderizarSeccionCarritoResumen()
+          Swal.fire(
+            'Eliminado!',
+            'El producto ha sido eliminado.',
+            'success'
+          );
+        } else if (result.isDismissed) {
+          // Acción si el usuario presiona "No"
+          console.log('producto eliminado con exito');
+        }
+      });
+
 }
 
 // Llamar a la función para renderizar el carrito al cargar la página
@@ -1027,7 +1065,7 @@ function disminuyeCantidadDeUnProdPorId(productItem) {
 
 // checkout confirmar compra:
 
-function confirmarCompra(){
+function confirmarCompra() {
     const ventanaModaConfirmarCompraCarrito = document.createElement("div")
     ventanaModaConfirmarCompraCarrito.classList.add("modal");
     ventanaModaConfirmarCompraCarrito.innerHTML =
@@ -1079,7 +1117,15 @@ function confirmarCompra(){
     // Evento para confirmar la acción de vaciar el carrito
     confirmBtnVaciarCarrito.addEventListener("click", function () {
         // vaciarCarrito(); // Llamar a la función para vaciar el carrito
-        alert("compra realizada con exito")
+        // alert("compra realizada con exito")
+        // Alerta de éxito
+        Swal.fire({
+            title: '¡Éxito!',
+            text: 'Su compra fue realizada con exito.',
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        });
+
         cerrarModalVaciarCarrito();
         vaciarCarrito();
         renderizarPaginaCarrito()
