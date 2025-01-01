@@ -497,7 +497,11 @@ if (document.getElementById("confirmModal") || document.querySelector("carrito-s
 
     function agregarAlCarritoConConfirmacion(productItem) {
         productoConfirmado = productItem; // Guardamos el producto que el usuario está intentando agregar
+
+        console.log(`click en agregar producto, producto stock= ${productItem.stock}`)
+
         if (productItem.stock == 0) {
+            // alert("No hay stock disponible.");
             Swal.fire({
                 title: '¡Error!',
                 text: 'No Hay stock disponible.',
@@ -998,7 +1002,7 @@ function eliminarProducto(id) {
         cancelButtonColor: '#d33',  // Color del botón de cancelar
         confirmButtonText: 'Sí, eliminarlo',  // Texto del botón de confirmación
         cancelButtonText: 'No, cancelar',  // Texto del botón de cancelación
-      }).then((result) => {
+    }).then((result) => {
         if (result.isConfirmed) {
             let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
             carrito = carrito.filter(p => p.id !== id); // Eliminar el producto por su ID
@@ -1006,16 +1010,16 @@ function eliminarProducto(id) {
             renderizarCarrito();
             renderizarSeccionCarritoListaProductos()
             renderizarSeccionCarritoResumen()
-          Swal.fire(
-            'Eliminado!',
-            'El producto ha sido eliminado.',
-            'success'
-          );
+            Swal.fire(
+                'Eliminado!',
+                'El producto ha sido eliminado.',
+                'success'
+            );
         } else if (result.isDismissed) {
-          // Acción si el usuario presiona "No"
-          console.log('producto eliminado con exito');
+            // Acción si el usuario presiona "No"
+            console.log('producto eliminado con exito');
         }
-      });
+    });
 
 }
 
@@ -1091,8 +1095,13 @@ function disminuyeCantidadDeUnProdPorId(productItem) {
 // checkout confirmar compra:
 
 function confirmarCompra() {
-    const ventanaModaConfirmarCompraCarrito = document.createElement("div")
-    ventanaModaConfirmarCompraCarrito.classList.add("modal");
+    // Verifica si ya existe un modal para evitar crear múltiples
+    let ventanaModaConfirmarCompraCarrito = document.querySelector(".modal");
+    // if (ventanaModaConfirmarCompraCarrito) {
+    //     return; // Si el modal ya existe, no hacemos nada
+    // }
+    // ventanaModaConfirmarCompraCarrito = document.createElement("div")
+    // ventanaModaConfirmarCompraCarrito.classList.add("modal");
     ventanaModaConfirmarCompraCarrito.innerHTML =
         `<div class="modal-content">
         <span class="close">&times;</span>
@@ -1100,7 +1109,7 @@ function confirmarCompra() {
         <p id="txt-confirmacion">¿Deseas confirmar la compra?</p>
         <div class="modal-buttons">
             <button id="cancelBtn" class="cancel">Cancelar</button>
-            <button id="confirmBtn" class="confirm">Confirmar</button>
+            <button id="confirmCompraBtn" class="confirm">Confirmar</button>
         </div>
     </div>`
 
@@ -1115,7 +1124,7 @@ function confirmarCompra() {
     // Obtener elementos del modal
     const closeModalVaciarCarrito = ventanaModaConfirmarCompraCarrito.querySelector(".close");
     const cancelBtnVaciarCarrito = ventanaModaConfirmarCompraCarrito.querySelector("#cancelBtn");
-    const confirmBtnVaciarCarrito = ventanaModaConfirmarCompraCarrito.querySelector("#confirmBtn");
+    const confirmCompraBtn = ventanaModaConfirmarCompraCarrito.querySelector("#confirmCompraBtn");
     // const txtConfirmacion = ventanaModal.querySelector("#txt-confirmacion");
 
 
@@ -1140,7 +1149,7 @@ function confirmarCompra() {
     });
 
     // Evento para confirmar la acción de vaciar el carrito
-    confirmBtnVaciarCarrito.addEventListener("click", function () {
+    confirmCompraBtn.addEventListener("click", function () {
         // vaciarCarrito(); // Llamar a la función para vaciar el carrito
         // alert("compra realizada con exito")
         // Alerta de éxito
@@ -1150,9 +1159,8 @@ function confirmarCompra() {
             icon: 'success',
             confirmButtonText: 'Aceptar'
         });
-
-        cerrarModalVaciarCarrito();
         vaciarCarrito();
+        cerrarModalVaciarCarrito();
         renderizarPaginaCarrito()
     });
 
